@@ -38,7 +38,7 @@ app.UseSwaggerUI(options =>
 
 
 
-app.MapGet("/",()=>"hello to miri's site :) ")
+app.MapGet("/",()=>"hello to miri's site :) ");
 app.MapGet("/toDo",   (ToDoDbContext db) =>
          Results.Ok( db.Items)
 );
