@@ -16,11 +16,11 @@ builder.Services.AddCors(opt =>
 var app = builder.Build();
 app.UseCors("CorsPolicy");
 
-if (app.Environment.IsDevelopment())
-{
+/*if (app.Environment.IsDevelopment())
+{*/
     app.UseSwagger();
     app.UseSwaggerUI();
-}
+/*}*/
 app.UseSwagger(options =>
 {
     options.SerializeAsV2 = true;
@@ -36,7 +36,7 @@ app.UseSwaggerUI(options =>
 
 
 
-
+app.MapGet("/",()=>"hello to miri's site :) ")
 app.MapGet("/toDo",   (ToDoDbContext db) =>
          Results.Ok( db.Items)
 );
